@@ -58,7 +58,7 @@
   <div class="container">
     <h1>AMORABK /shahm</h1>
     <div class="subtitle">PS4 9.00 Jailbreak Host</div>
-    <div class="status-box" id="msgs">جاري تحميل استضافة كيم والبدء تلقائياً...</div>
+    <div class="status-box" id="msgs">جاري تحميل النظام بسلاسة...</div>
     <a href="https://instagram.com/amora_baker78" target="_blank" class="insta-box">
       <span>📷 instagram: amora_baker78</span>
     </a>
@@ -66,19 +66,7 @@
 
   <div id="console" style="display:none"></div>
 
-  <!-- تشغيل الـ cache أو ملفات التشغيل الأساسية التابعة لمستودع كيم -->
-  <script>
-    window.addEventListener('DOMContentLoaded', function() {
-      setTimeout(function() {
-        var s = document.createElement('script');
-        s.src = "cache.html"; // أو سحب الملف الرئيسي للتشغيل
-        // استبدال التحميل المباشر لملف الـ psfree مع ملفات الـ rop
-        var s2 = document.createElement('script');
-        s2.type = "module";
-        s2.src = "psfree.mjs";
-        document.body.appendChild(s2);
-      }, 500);
-    });
-  </script>
+  <!-- ربط محرك كيم الأساسي مباشرة ليعمل بنفس السرعة والاستقرار -->
+  <script src="cache.html" defer></script>
 </body>
 </html>
