@@ -58,7 +58,7 @@
   <div class="container">
     <h1>AMORABK /shahm</h1>
     <div class="subtitle">PS4 9.00 Jailbreak Host</div>
-    <div class="status-box" id="msgs">جاري تحميل النظام بسلاسة...</div>
+    <div class="status-box" id="msgs">جاري تفعيل الثغرة... يرجى الانتظار</div>
     <a href="https://instagram.com/amora_baker78" target="_blank" class="insta-box">
       <span>📷 instagram: amora_baker78</span>
     </a>
@@ -66,7 +66,14 @@
 
   <div id="console" style="display:none"></div>
 
-  <!-- ربط محرك كيم الأساسي مباشرة ليعمل بنفس السرعة والاستقرار -->
-  <script src="cache.html" defer></script>
+  <!-- تشغيل محرك الثغرة المباشر -->
+  <script>
+    setTimeout(function() {
+      var s = document.createElement('script');
+      s.src = "psfree.mjs";
+      s.type = "module";
+      document.body.appendChild(s);
+    }, 500);
+  </script>
 </body>
 </html>
