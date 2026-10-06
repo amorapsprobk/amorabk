@@ -40,13 +40,14 @@
     }
     .subtitle { font-size: 1.2rem; color: #00f0ff; margin-bottom: 25px; }
     .btn-jb {
+      display: block;
       background: linear-gradient(45deg, #ff007f, #00f0ff);
-      border: none; padding: 15px 30px; font-size: 1.2rem;
+      border: none; padding: 15px 20px; font-size: 1.2rem;
       font-weight: bold; color: #fff; border-radius: 12px;
       cursor: pointer; box-shadow: 0 0 20px rgba(255, 0, 127, 0.4);
-      margin-bottom: 20px; width: 100%; text-transform: uppercase;
+      margin-bottom: 20px; width: 100%; text-decoration: none;
+      text-transform: uppercase;
     }
-    .btn-jb:active { transform: scale(0.98); }
     .insta-box {
       display: inline-flex; align-items: center; gap: 10px;
       background: rgba(255, 255, 255, 0.05);
@@ -59,30 +60,15 @@
 <body>
   <div class="glow-bg"></div>
   <div class="container">
-    <h1>AMORABK /shahm</h1>
+    <h1>AMORABK /SHAHM</h1>
     <div class="subtitle">PS4 9.00 Jailbreak Host</div>
     
-    <!-- زر تفاعلي يضمن استجابة المتصفح الفورية ونزع قيود الحماية -->
-    <button class="btn-jb" onclick="startJailbreak()">اضغط هنا لتفعيل الثغرة</button>
+    <!-- زر مباشر يفتح ملف التشغيل الأصلي بدون تعقيد -->
+    <a href="cache.html" class="btn-jb">اضغط هنا لتفعيل الثغرة</a>
 
-    <br>
     <a href="https://instagram.com/amora_baker78" target="_blank" class="insta-box">
       <span>📷 instagram: amora_baker78</span>
     </a>
   </div>
-
-  <div id="console" style="display:none"></div>
-
-  <script>
-    function startJailbreak() {
-      document.querySelector('.btn-jb').innerText = "جاري حقن الذاكرة...";
-      setTimeout(function() {
-        var s = document.createElement('script');
-        s.src = "psfree.mjs";
-        s.type = "module";
-        document.body.appendChild(s);
-      }, 300);
-    }
-  </script>
 </body>
 </html>
