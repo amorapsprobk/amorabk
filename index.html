@@ -1,47 +1,138 @@
-<!-- Copyright (C) 2023-2025 anonymous
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AMORABK - PS4 HOST</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: #0d0f17;
+      color: #ffffff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow: hidden;
+    }
 
-This file is part of PSFree.
+    /* خلفية متوهجة */
+    .glow-bg {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: linear-gradient(45deg, #ff007f, #00f0ff);
+      filter: blur(120px);
+      border-radius: 50%;
+      z-index: 1;
+    }
 
-PSFree is free software: you can redistribute it and/or modify
-it under the terms of the GNU Affero General Public License as
-published by the Free Software Foundation, either version 3 of the
-License, or (at your option) any later version.
+    .container {
+      position: relative;
+      z-index: 2;
+      background: rgba(20, 24, 38, 0.6);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      box-shadow: 0 0 30px rgba(0, 240, 255, 0.2);
+      max-width: 500px;
+      width: 90%;
+    }
 
-PSFree is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU Affero General Public License for more details.
+    /* العنوان الرئيسي نيوني */
+    h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #fff;
+      text-shadow: 
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #ff007f,
+        0 0 42px #ff007f,
+        0 0 82px #ff007f;
+      margin-bottom: 10px;
+    }
 
-You should have received a copy of the GNU Affero General Public License
-along with this program.  If not, see <https://www.gnu.org/licenses/>.
--->
-<html>
-    <head>
-        <meta charset='utf-8'>
-        <title>PSFree-Lapse Exploit For PS4 9.00</title>
-        <style>
-            @font-face {
-                font-family: 'logging';
-                src: url('fonts/LiberationMono-Regular.ttf');
-            }
-            #console {
-                font-family: 'logging';
-            }
-        </style>
-        <script>
-        if (window.applicationCache.status=='0')
-        {
-          window.location.replace("cache.html");
-        }
-        </script>
-    </head>
-    <body>
-        PSFree: A PS4/PS5 Exploit Chain
-        <br>
-        <br>
-        See <a href='./about.html' data-jslicense='1'>JavaScript license information</a> for the
-        source code and license.<br>
-        <pre id='console'></pre>
-    </body>
-    <script type='module' src='./alert.mjs'></script>
+    .subtitle {
+      font-size: 1.2rem;
+      color: #00f0ff;
+      margin-bottom: 25px;
+      text-shadow: 0 0 8px rgba(0, 240, 255, 0.8);
+    }
+
+    /* زر التفعيل النيوني */
+    .btn-exploit {
+      background: transparent;
+      color: #00f0ff;
+      border: 2px solid #00f0ff;
+      padding: 15px 35px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+      transition: all 0.3s ease;
+      margin-bottom: 30px;
+    }
+
+    .btn-exploit:hover {
+      background: #00f0ff;
+      color: #0d0f17;
+      box-shadow: 0 0 30px rgba(0, 240, 255, 0.9);
+    }
+
+    /* حساب الانستغرام */
+    .insta-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 0, 127, 0.4);
+      padding: 10px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      color: #ff007f;
+      font-weight: 600;
+      text-shadow: 0 0 5px rgba(ff, 0, 127, 0.6);
+      box-shadow: 0 0 10px rgba(255, 0, 127, 0.2);
+    }
+
+    #msgs {
+      margin-top: 15px;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="glow-bg"></div>
+
+  <div class="container">
+    <h1>AMORABK</h1>
+    <div class="subtitle">PS4 9.00 Jailbreak Host</div>
+
+    <button class="btn-exploit" onclick="load_exploit()">تفعيل الثغرة | Load GoldHEN</button>
+
+    <div id="msgs">بانتظار التشغيل...</div>
+
+    <br>
+
+    <a href="https://instagram.com/amora_baker78" target="_blank" class="insta-box">
+      <span>📷 instagram: amora_baker78</span>
+    </a>
+  </div>
+
+  <script src="psfree.mjs" type="module"></script>
+</body>
 </html>
