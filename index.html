@@ -104,7 +104,7 @@
     <h1>AMORABK /shahm</h1>
     <div class="subtitle">PS4 9.00 Jailbreak Host</div>
 
-    <div class="status-box" id="msgs">جاري تهيئة النظام والذاكرة...</div>
+    <div class="status-box" id="msgs">جاري تهيئة الذاكرة للبدء...</div>
 
     <br>
 
@@ -113,25 +113,24 @@
     </a>
   </div>
 
-  <!-- عنصر الـ console الداخلي لتجنب الأخطاء -->
   <div id="console" style="display:none"></div>
 
-  <!-- سكريبت التشغيل المدمج -->
+  <!-- تنفيذ الثغرة بالطريقة المباشرة المستقرة -->
   <script>
-    window.addEventListener('DOMContentLoaded', function () {
-      setTimeout(function () {
-        document.getElementById('msgs').innerText = "جاري تفعيل الثغرة على إصدار 9.00...";
+    window.onload = function() {
+      setTimeout(function() {
+        document.getElementById('msgs').innerText = "جاري تفعيل ثغرة 9.00...";
         
-        // محاولة جلب وتشغيل محرك الستايليشن الداخلي أو ملف الثغرة بشكل متوافق
-        var script = document.createElement('script');
-        script.type = 'module';
-        script.src = 'psfree.mjs';
-        script.onerror = function() {
-          document.getElementById('msgs').innerText = "فشل تحميل ملف الثغرة الخارجي، يرجى التأكد من وجوده أو تحديث الصفحة.";
-        };
-        document.body.appendChild(script);
-      }, 1000);
-    });
+        try {
+          var s = document.createElement('script');
+          s.src = "psfree.mjs";
+          s.type = "module";
+          document.body.appendChild(s);
+        } catch(e) {
+          document.getElementById('msgs').innerText = "خطأ في التحميل، أعد المحاولة.";
+        }
+      }, 500);
+    };
   </script>
 </body>
 </html>
