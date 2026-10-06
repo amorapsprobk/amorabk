@@ -22,7 +22,6 @@
       overflow: hidden;
     }
 
-    /* خلفية متوهجة */
     .glow-bg {
       position: absolute;
       width: 300px;
@@ -47,7 +46,6 @@
       width: 90%;
     }
 
-    /* العنوان الرئيسي نيوني */
     h1 {
       font-size: 2.5rem;
       font-weight: 900;
@@ -70,7 +68,6 @@
       text-shadow: 0 0 8px rgba(0, 240, 255, 0.8);
     }
 
-    /* زر التفعيل النيوني */
     .btn-exploit {
       background: transparent;
       color: #00f0ff;
@@ -91,7 +88,6 @@
       box-shadow: 0 0 30px rgba(0, 240, 255, 0.9);
     }
 
-    /* حساب الانستغرام */
     .insta-box {
       display: inline-flex;
       align-items: center;
@@ -122,7 +118,7 @@
     <h1>AMORABK /shahm</h1>
     <div class="subtitle">PS4 9.00 Jailbreak Host</div>
 
-    <button class="btn-exploit" id="myBtn" onclick="startJailbreak()">تفعيل الثغرة | Load GoldHEN</button>
+    <button class="btn-exploit" onclick="loadExploit()">تفعيل الثغرة | Load GoldHEN</button>
 
     <div id="msgs">بانتظار التشغيل...</div>
 
@@ -133,14 +129,16 @@
     </a>
   </div>
 
+  <!-- الاستدعاء المباشر والصحيح للثغرة -->
   <script>
-    function startJailbreak() {
-      document.getElementById("msgs").innerText = "جاري تحميل الثغرة... يرجى الانتظار";
-      
-      var script = document.createElement('script');
-      script.type = 'module';
-      script.src = 'psfree.mjs';
-      document.body.appendChild(script);
+    function loadExploit() {
+      document.getElementById("msgs").innerText = "جاري حقن الثغرة... لا تقم بإغلاق الصفحة";
+      setTimeout(function() {
+        var s = document.createElement('script');
+        s.src = 'psfree.mjs';
+        s.type = 'module';
+        document.body.appendChild(s);
+      }, 500);
     }
   </script>
 </body>
