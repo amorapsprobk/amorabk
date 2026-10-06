@@ -22,7 +22,6 @@
       overflow: hidden;
     }
 
-    /* خلفية متوهجة */
     .glow-bg {
       position: absolute;
       width: 300px;
@@ -47,7 +46,6 @@
       width: 90%;
     }
 
-    /* العنوان الرئيسي نيوني */
     h1 {
       font-size: 2.5rem;
       font-weight: 900;
@@ -70,7 +68,6 @@
       text-shadow: 0 0 8px rgba(0, 240, 255, 0.8);
     }
 
-    /* صندوق الحالة التلقائي */
     .status-box {
       border: 2px solid #00f0ff;
       padding: 15px 25px;
@@ -83,7 +80,6 @@
       background: rgba(0, 240, 255, 0.05);
     }
 
-    /* حساب الانستغرام */
     .insta-box {
       display: inline-flex;
       align-items: center;
@@ -108,7 +104,7 @@
     <h1>AMORABK /shahm</h1>
     <div class="subtitle">PS4 9.00 Jailbreak Host</div>
 
-    <div class="status-box" id="msgs">جاري تفعيل الثغرة تلقائياً...</div>
+    <div class="status-box" id="msgs">جاري تفعيل الثغرة...</div>
 
     <br>
 
@@ -117,8 +113,9 @@
     </a>
   </div>
 
-  <!-- تحميل الثغرة تلقائياً مباشرة -->
-  <script src="alert.mjs" type="module"></script>
+  <!-- عنصر الـ console المطلوب لتجنب الخطأ -->
+  <div id="console" style="display:none"></div>
+
   <script src="psfree.mjs" type="module"></script>
 </body>
 </html>
