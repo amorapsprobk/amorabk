@@ -70,17 +70,25 @@
       text-shadow: 0 0 8px rgba(0, 240, 255, 0.8);
     }
 
-    /* صندوق حالة التفعيل */
-    .status-box {
+    /* زر التفعيل النيوني */
+    .btn-exploit {
+      background: transparent;
+      color: #00f0ff;
       border: 2px solid #00f0ff;
-      padding: 15px 25px;
+      padding: 15px 35px;
       font-size: 1.2rem;
       font-weight: bold;
       border-radius: 12px;
-      color: #00f0ff;
+      cursor: pointer;
       box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
-      margin-bottom: 25px;
-      background: rgba(0, 240, 255, 0.05);
+      transition: all 0.3s ease;
+      margin-bottom: 30px;
+    }
+
+    .btn-exploit:hover {
+      background: #00f0ff;
+      color: #0d0f17;
+      box-shadow: 0 0 30px rgba(0, 240, 255, 0.9);
     }
 
     /* حساب الانستغرام */
@@ -98,6 +106,12 @@
       text-shadow: 0 0 5px rgba(255, 0, 127, 0.6);
       box-shadow: 0 0 10px rgba(255, 0, 127, 0.2);
     }
+
+    #msgs {
+      margin-top: 15px;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
   </style>
 </head>
 <body>
@@ -108,15 +122,26 @@
     <h1>AMORABK /shahm</h1>
     <div class="subtitle">PS4 9.00 Jailbreak Host</div>
 
-    <div class="status-box" id="msgs">جاري تفعيل الثغرة تلقائياً...</div>
+    <button class="btn-exploit" id="myBtn" onclick="startJailbreak()">تفعيل الثغرة | Load GoldHEN</button>
+
+    <div id="msgs">بانتظار التشغيل...</div>
+
+    <br>
 
     <a href="https://instagram.com/amora_baker78" target="_blank" class="insta-box">
       <span>📷 instagram: amora_baker78</span>
     </a>
   </div>
 
-  <!-- تحميل الثغرة تلقائياً -->
-  <script src="alert.mjs" type="module"></script>
-  <script src="psfree.mjs" type="module"></script>
+  <script>
+    function startJailbreak() {
+      document.getElementById("msgs").innerText = "جاري تحميل الثغرة... يرجى الانتظار";
+      
+      var script = document.createElement('script');
+      script.type = 'module';
+      script.src = 'psfree.mjs';
+      document.body.appendChild(script);
+    }
+  </script>
 </body>
 </html>
