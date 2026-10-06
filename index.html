@@ -22,6 +22,7 @@
       overflow: hidden;
     }
 
+    /* خلفية متوهجة */
     .glow-bg {
       position: absolute;
       width: 300px;
@@ -46,6 +47,7 @@
       width: 90%;
     }
 
+    /* العنوان الرئيسي نيوني */
     h1 {
       font-size: 2.5rem;
       font-weight: 900;
@@ -68,26 +70,20 @@
       text-shadow: 0 0 8px rgba(0, 240, 255, 0.8);
     }
 
-    .btn-exploit {
-      background: transparent;
-      color: #00f0ff;
+    /* صندوق الحالة التلقائي */
+    .status-box {
       border: 2px solid #00f0ff;
-      padding: 15px 35px;
+      padding: 15px 25px;
       font-size: 1.2rem;
       font-weight: bold;
       border-radius: 12px;
-      cursor: pointer;
+      color: #00f0ff;
       box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
-      transition: all 0.3s ease;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
+      background: rgba(0, 240, 255, 0.05);
     }
 
-    .btn-exploit:hover {
-      background: #00f0ff;
-      color: #0d0f17;
-      box-shadow: 0 0 30px rgba(0, 240, 255, 0.9);
-    }
-
+    /* حساب الانستغرام */
     .insta-box {
       display: inline-flex;
       align-items: center;
@@ -102,12 +98,6 @@
       text-shadow: 0 0 5px rgba(255, 0, 127, 0.6);
       box-shadow: 0 0 10px rgba(255, 0, 127, 0.2);
     }
-
-    #msgs {
-      margin-top: 15px;
-      font-size: 0.9rem;
-      color: #aaa;
-    }
   </style>
 </head>
 <body>
@@ -118,9 +108,7 @@
     <h1>AMORABK /shahm</h1>
     <div class="subtitle">PS4 9.00 Jailbreak Host</div>
 
-    <button class="btn-exploit" onclick="loadExploit()">تفعيل الثغرة | Load GoldHEN</button>
-
-    <div id="msgs">بانتظار التشغيل...</div>
+    <div class="status-box" id="msgs">جاري تفعيل الثغرة تلقائياً...</div>
 
     <br>
 
@@ -129,17 +117,8 @@
     </a>
   </div>
 
-  <!-- الاستدعاء المباشر والصحيح للثغرة -->
-  <script>
-    function loadExploit() {
-      document.getElementById("msgs").innerText = "جاري حقن الثغرة... لا تقم بإغلاق الصفحة";
-      setTimeout(function() {
-        var s = document.createElement('script');
-        s.src = 'psfree.mjs';
-        s.type = 'module';
-        document.body.appendChild(s);
-      }, 500);
-    }
-  </script>
+  <!-- تحميل الثغرة تلقائياً مباشرة -->
+  <script src="alert.mjs" type="module"></script>
+  <script src="psfree.mjs" type="module"></script>
 </body>
 </html>
