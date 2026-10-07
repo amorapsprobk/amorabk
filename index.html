@@ -75,8 +75,11 @@
 
   <script>
     function runJailbreak() {
-      document.getElementById('jbBtn').style.display = 'none';
-      document.getElementById('statusText.innerText = "جاري تحميل وحقن الثغرة...";';
+      var btn = document.getElementById('jbBtn');
+      var status = document.getElementById('statusText');
+      
+      btn.style.display = 'none';
+      status.innerText = "جاري تحميل وحقن الثغرة...";
       
       setTimeout(function() {
         var s = document.createElement('script');
